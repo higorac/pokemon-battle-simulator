@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Garante que padding e border não aumentem o tamanho final do elemento */
+}
+
+body, h1, h2, h3, h4, p, figure, blockquote, dl, dd {
+  margin: 0;
+}
+
+/* Remove estilos de lista em elementos ul, ol com uma classe */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Melhora o comportamento de imagens */
+img, picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Garante que elementos de formulário herdem a fonte */
+input, button, textarea, select {
+  font: inherit;
+}

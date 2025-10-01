@@ -2,8 +2,9 @@ import styles from './BattleScreen.module.css'
 
 const BattleScreen = () => {
     return (
-        <div className={styles.battleScreen}>
-            <p>teste</p>
+        <div className={styles.wrapper}>
+            <div className={styles.battleScreen}></div>
+            <div className={styles.decorativeBand}/>
         </div>
     );
 };

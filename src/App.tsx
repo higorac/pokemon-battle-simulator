@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.module.css'
 import BattleScreen from './components/BattleScreen/BattleScreen'
+import BattleLog from './components/BattleLog/BattleLog'
 import style from './App.module.css'
 
 function App() {
@@ -9,7 +10,10 @@ function App() {
   return (
     <>
       <main className={style.mainContainer}>
-        <BattleScreen></BattleScreen>
+        <div className={style.gameInterface}>
+          <BattleScreen></BattleScreen>
+          <BattleLog></BattleLog>
+        </div>
       </main>
     </>
   )

@@ -1,19 +1,30 @@
-.battleScreen {
-  width: 100%;
-  max-width: 900px; /* Largura máxima da tela de batalha */
-  aspect-ratio: 16 / 9; /* Proporção de tela, como uma TV (ajuste se necessário) */
-  
-  background-color: #1a1a1a; /* Um fundo escuro, quase preto */
-  border: 4px solid #4a4a4a; /* Borda cinza escura */
-  border-radius: 12px; /* Bordas levemente arredondadas */
-  
-  /* IMPORTANTE: Isso permite posicionar elementos (sprites, HP bars) dentro dela depois */
-  position: relative; 
-  
-  /* Apenas para centralizar o texto de exemplo */
+.wrapper {
+  position: relative; /* cria contexto para os filhos absolutos */
   display: flex;
-  align-items: center;
   justify-content: center;
-  color: white;
-  font-size: 2rem;
+  align-items: center;
+  flex: 3;
+  width: 1450px;
+  max-width: 1450px;  
+  margin-left: 6rem;
+  margin-right: 6rem;
+  height: 80%;
+}
+
+.battleScreen {
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background-color: #2C2C2C;
+  border-radius: 3rem;
+  box-shadow: 10px 0 50px;
+}
+
+.decorativeBand {
+  position: absolute;
+  z-index: 0;
+  width: 110%;
+  height: 70%;
+  background-color: #2C2C2C;
+  border-radius: 10px;
 }

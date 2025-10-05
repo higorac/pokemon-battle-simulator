@@ -7,20 +7,23 @@
   background: linear-gradient(-134deg,  #FFB1B1, #E40D0D);
 }
 
-.gameInterface {
-  width: 100%;
+.leftSide {
+  flex: 1;
+  flex-direction: column;
   max-height: 80vh;
-  max-width: 1600px; /* Largura máxima da tela de batalha */
   aspect-ratio: 16 / 9; /* Proporção de tela, como uma TV (ajuste se necessário) */
-  /* background-color: #1a1a1a21; 
-  border: 4px solid #4a4a4a;  */
   border-radius: 12px; /* Bordas levemente arredondadas */
-  
-  /* IMPORTANTE: Isso permite posicionar elementos (sprites, HP bars) dentro dela depois */
-  position: relative; 
-  
-  /* Apenas para centralizar o texto de exemplo */
   display: flex;
   justify-content: center;
   align-items: center;
+  box-sizing: border-box;
+}
+
+.rightSide {
+  flex: 3;
+  height: 80vh;
+  max-width: 35vh; /* Largura máxima do log de batalha */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

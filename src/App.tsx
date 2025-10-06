@@ -3,6 +3,7 @@ import './App.module.css'
 import BattleScreen from './components/BattleScreen/BattleScreen'
 import BattleLog from './components/BattleLog/BattleLog'
 import style from './App.module.css'
+import AttackPanel from './components/AttackPanell/AttackPanel'
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -12,6 +13,11 @@ function App() {
       <main className={style.mainContainer}>
         <div className={style.leftSide}>
             <BattleScreen></BattleScreen>
+            <div className={style.panel}>
+              <AttackPanel></AttackPanel>
+              <AttackPanel></AttackPanel>
+              <AttackPanel></AttackPanel>
+            </div>
         </div>
           <div className={style.rightSide}>
             <BattleLog></BattleLog>

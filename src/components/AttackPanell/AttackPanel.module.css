@@ -1,5 +1,18 @@
-.wrapper {
-    width: 200px;
-    height: 200px;
-    background-color: red;
+.attackPanel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 450px;
+    background-color: var(--color-background);
+    border-radius: 10px;
+    flex-wrap: wrap;
+    border-radius: 12px;
+    padding: 10px;
+    gap: 5px;
+}
+
+.attackButton {
+    flex: 1 1 calc(50% - 10px);
+    border-radius: 8px;
+    padding: 1rem;
 }

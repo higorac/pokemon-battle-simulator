@@ -4,7 +4,7 @@
   justify-content: center;
   align-items: center;
   flex: 3;
-  width: 1450px;
+  width: 80%;
   max-width: 1450px;  
   margin-left: 6rem;
   margin-right: 6rem;
@@ -14,7 +14,7 @@
 .battleScreen {
   z-index: 1;
   width: 100%;
-  height: 100%;
+  height: 90%;
   background-color: #2C2C2C;
   border-radius: 3rem;
   box-shadow: 10px 0 50px;

@@ -1,3 +1,8 @@
+:root {
+  --fonte-principal: 'Audiowide', cursive;
+  --color-background: #2C2C2C;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
 
 * {

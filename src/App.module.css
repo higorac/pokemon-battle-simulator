@@ -29,6 +29,7 @@
 }
 
 .panel {
+  max-height: 150px;
   justify-content: space-between;
   display: flex;
   flex-direction: row;

@@ -5,6 +5,7 @@ import BattleLog from './components/BattleLog/BattleLog'
 import style from './App.module.css'
 import AttackPanel from './components/AttackPanell/AttackPanel'
 import MoveDescription from './MoveDescription/MoveDescription'
+import Controls from './components/Controls /Controls'
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -17,6 +18,7 @@ function App() {
             <div className={style.panel}>
               <AttackPanel></AttackPanel>
               <MoveDescription></MoveDescription>
+              <Controls></Controls>
             </div>
         </div>
           <div className={style.rightSide}>

@@ -1,25 +1,27 @@
 .attackPanel {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 450px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+
+    max-width: 600px;
+    width: 80%;
+    height: 100%;
+    max-height: 600px;
+
     background-color: var(--color-background);
-    border-radius: 10px;
-    flex-wrap: wrap;
     border-radius: 12px;
-    padding: 10px;
+    padding: 15px;
+    box-sizing: border-box;
     gap: 10px;
     box-shadow: 5px 5px 2rem black;
 }
 
 .attackButton {
-    font-family: audiowide;
-    background-color: #c2c2c2;
-    flex: 1 1 calc(50% - 10px);
+    font-family: "Baloo 2", sans-serif;
+    font-weight: 600;
     border-radius: 12px;
-    width: 100px;
-    padding: 20px 0px;
-    border: solid rgb(255, 255, 255);
-    border-width: 0px 2px 2px 0px;
-    font-size: 15px;
+    width: 100%;
+    padding: 10px 0px;
+    box-shadow: 3px 3px 5px black;
+    font-size: 12px;
 }

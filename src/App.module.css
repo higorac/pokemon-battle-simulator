@@ -4,7 +4,8 @@
   align-items: center;
   min-height: 100vh;
   padding: 4rem; /* Um respiro nas bordas */
-  background: linear-gradient(-134deg,  #FFB1B1, #E40D0D);
+  
+  /*background: linear-gradient(-134deg,  #FFB1B1, #E40D0D);*/
 }
 
 .leftSide {

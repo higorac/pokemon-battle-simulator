@@ -40,7 +40,7 @@
   width: 80%;
 }
 
-.partyWrapper {
+.screenWrapper {
   display: flex;
   gap: 20px;
   justify-content: space-between;
@@ -57,4 +57,10 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+
+.battleArea{
+  width: 80%;
+  background-color: white;
+  border-radius: 10px;
 }

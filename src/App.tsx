@@ -17,12 +17,13 @@ function App() {
       <main className={style.mainContainer}>
         <div className={style.leftSide}>
             <BattleScreen>
-              <div className={style.partyWrapper}>
+              <div className={style.screenWrapper}>
                 <div className={style.playerParty}>
                   {party.map((_, index) => (
                     <PartyPanel key={index} />
                   ))} 
                 </div>
+                <div className={style.battleArea}></div>
                 <div className={style.enemyParty}>
                   {party.map((_, index) => (
                     <PartyPanel key={index} />

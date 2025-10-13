@@ -18,6 +18,11 @@
   background-color: #2C2C2C;
   border-radius: 3rem;
   box-shadow: 10px 0 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
 }
 
 .decorativeBand {

@@ -39,3 +39,22 @@
   margin-right: 1rem;
   width: 80%;
 }
+
+.partyWrapper {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.playerParty {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.enemyParty {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

@@ -18,4 +18,11 @@
     font-family: "Baloo 2", sans-serif;
     font-weight: 700;
     font-size: medium;
+    box-shadow: #2c2c2c 5px 5px 2rem;
+}
+
+.controlsButtons:hover {
+    background-color: rgb(39, 39, 39);
+    color: white;
+    box-shadow: rgb(43, 43, 43) 5px 5px 2px inset;
 }

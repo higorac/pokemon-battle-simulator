@@ -1,9 +1,15 @@
 import styles from './BattleScreen.module.css'
 
-const BattleScreen = () => {
+type BattleScreenProps = {
+    children?: React.ReactNode;
+}
+
+const BattleScreen = ({ children }: BattleScreenProps) => {
     return (
         <div className={styles.wrapper}>
-            <div className={styles.battleScreen}></div>
+            <div className={styles.battleScreen}>
+                {children}
+            </div>
             <div className={styles.decorativeBand}/>
         </div>
     );

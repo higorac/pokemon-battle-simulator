@@ -7,6 +7,7 @@ import AttackPanel from './components/AttackPanel/AttackPanel'
 import MoveDescription from './MoveDescription/MoveDescription'
 import Controls from './components/Controls /Controls'
 import PartyPanel from './components/PartyPanel/PartyPanel'
+// import { useEffect, useState } from 'react'
 
 function App() {
   // const [count, setCount] = useState(0)

@@ -9,6 +9,7 @@
   margin-left: 6rem;
   margin-right: 6rem;
   height: 80%;
+  aspect-ratio: 16 / 9;
 }
 
 .battleScreen {

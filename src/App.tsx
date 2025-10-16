@@ -7,10 +7,17 @@ import AttackPanel from './components/AttackPanel/AttackPanel'
 import MoveDescription from './MoveDescription/MoveDescription'
 import Controls from './components/Controls /Controls'
 import PartyPanel from './components/PartyPanel/PartyPanel'
-// import { useEffect, useState } from 'react'
+import api, { getPokemonSprites } from './services/pokeapi'
+import { useEffect, useState } from 'react'
 
 function App() {
-  // const [count, setCount] = useState(0)
+
+  const [pokemons, setPokemons] = useState<any[]>([]);
+
+  useEffect(() => {
+    getPokemonSprites().then(setPokemons);
+  }, []);
+
   const party = Array(6).fill(null);
 
   return (

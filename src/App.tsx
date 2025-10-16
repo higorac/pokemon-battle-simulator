@@ -7,18 +7,28 @@ import AttackPanel from './components/AttackPanel/AttackPanel'
 import MoveDescription from './MoveDescription/MoveDescription'
 import Controls from './components/Controls /Controls'
 import PartyPanel from './components/PartyPanel/PartyPanel'
-import api, { getPokemonSprites } from './services/pokeapi'
+import { getPokemonSprites } from './services/pokeapi'
 import { useEffect, useState } from 'react'
+
+interface Pokemon {
+  id: number;
+  name: string;
+  sprite: string;
+}
 
 function App() {
 
-  const [pokemons, setPokemons] = useState<any[]>([]);
+  const [playerParty, setPlayerParty] = useState<Pokemon[]>([]);
+  const [enemyParty, setEnemyParty] = useState<Pokemon[]>([]);
 
   useEffect(() => {
-    getPokemonSprites().then(setPokemons);
-  }, []);
+    getPokemonSprites().then(allPokemons => {
+      const shuffled = [...allPokemons].sort(() => 0.5 - Math.random());
 
-  const party = Array(6).fill(null);
+      setPlayerParty(shuffled.slice(0, 6));
+      setEnemyParty(shuffled.slice(6, 12));
+    });
+  }, []);
 
   return (
     <>
@@ -27,15 +37,15 @@ function App() {
             <BattleScreen>
               <div className={style.screenWrapper}>
                 <div className={style.playerParty}>
-                  {party.map((_, index) => (
-                    <PartyPanel key={index} />
-                  ))} 
+                  {playerParty.map((pokemon) => (
+                    <PartyPanel key={pokemon.id} sprite={pokemon.sprite} />
+                  ))}
                 </div>
                 <div className={style.battleArea}></div>
                 <div className={style.enemyParty}>
-                  {party.map((_, index) => (
-                    <PartyPanel key={index} />
-                  ))} 
+                  {enemyParty.map((pokemon) => (
+                    <PartyPanel key={pokemon.id} sprite={pokemon.sprite} />
+                  ))}
                 </div>
               </div>
             </BattleScreen>

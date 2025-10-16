@@ -5,7 +5,7 @@ const api = axios.create({
 });
 
 interface PokemonSprite {
-    nome: string
+    name: string
     id: number
     sprite: string
 }

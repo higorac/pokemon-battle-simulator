@@ -1,10 +1,14 @@
 import styles from './PartyPanel.module.css'
 
-const PartyPanel = () => {
+type PartyPanelProps = {
+    sprite: string
+}
+
+const PartyPanel = ({sprite}: PartyPanelProps) => {
 
     return (
         <button className={styles.partySlot}>
-            <img className={styles.sprite}></img>
+            <img className={styles.sprite} src={sprite} alt='Pokemon Sprite'></img>
         </button>
     );
 };

@@ -17,7 +17,7 @@ export const getRandomPokemons = async (): Promise<{
     try {
         const randomIds: number[] = [];
         while (randomIds.length < 12) {
-            const randomId = Math.floor(Math.random() * 151) + 1
+            const randomId = Math.floor(Math.random() * 898) + 1
             if(!randomIds.includes(randomId)){
                 randomIds.push(randomId)
             }
@@ -36,6 +36,7 @@ export const getRandomPokemons = async (): Promise<{
     const player = randomPokemons.slice(0, 6);
     const enemy = randomPokemons.slice(6,12)
 
+    console.log("Funcionou")
     return {player, enemy}
 
     } catch (error) {

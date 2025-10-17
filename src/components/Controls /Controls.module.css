@@ -22,7 +22,11 @@
 }
 
 .controlsButtons:hover {
-    background-color: rgb(39, 39, 39);
     color: white;
     box-shadow: rgb(43, 43, 43) 5px 5px 2px inset;
+}
+
+.controlsButtons:active {
+    background-color: #636363;
+    box-shadow: none;
 }

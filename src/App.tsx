@@ -7,10 +7,10 @@ import AttackPanel from './components/AttackPanel/AttackPanel'
 import MoveDescription from './MoveDescription/MoveDescription'
 import Controls from './components/Controls /Controls'
 import PartyPanel from './components/PartyPanel/PartyPanel'
-import { getPokemonSprites } from './services/pokeapi'
+import { getRandomPokemons } from './services/pokeapi'
 import { useEffect, useState } from 'react'
 
-interface Pokemon {
+interface Pokemons {
   id: number;
   name: string;
   sprite: string;
@@ -18,17 +18,18 @@ interface Pokemon {
 
 function App() {
 
-  const [playerParty, setPlayerParty] = useState<Pokemon[]>([]);
-  const [enemyParty, setEnemyParty] = useState<Pokemon[]>([]);
+  const [playerParty, setPlayerParty] = useState<Pokemons[]>([]);
+  const [enemyParty, setEnemyParty] = useState<Pokemons[]>([]);
+
+  const loadRandomPokemons = async () => {
+    const { player, enemy } = await getRandomPokemons();
+    setPlayerParty(player);
+    setEnemyParty(enemy);
+  };  
 
   useEffect(() => {
-    getPokemonSprites().then(allPokemons => {
-      const shuffled = [...allPokemons].sort(() => 0.5 - Math.random());
-
-      setPlayerParty(shuffled.slice(0, 6));
-      setEnemyParty(shuffled.slice(6, 12));
-    });
-  }, []);
+    loadRandomPokemons()
+  }, [])
 
   return (
     <>
@@ -38,13 +39,13 @@ function App() {
               <div className={style.screenWrapper}>
                 <div className={style.playerParty}>
                   {playerParty.map((pokemon) => (
-                    <PartyPanel key={pokemon.id} sprite={pokemon.sprite} />
+                    <PartyPanel key={pokemon.id} sprite={pokemon.sprite} name={pokemon.name} />
                   ))}
                 </div>
                 <div className={style.battleArea}></div>
                 <div className={style.enemyParty}>
                   {enemyParty.map((pokemon) => (
-                    <PartyPanel key={pokemon.id} sprite={pokemon.sprite} />
+                    <PartyPanel key={pokemon.id} sprite={pokemon.sprite} name={pokemon.name} />
                   ))}
                 </div>
               </div>
@@ -52,7 +53,7 @@ function App() {
             <div className={style.panel}>
               <AttackPanel></AttackPanel>
               <MoveDescription></MoveDescription>
-              <Controls></Controls>
+              <Controls onRestart={loadRandomPokemons}></Controls>
             </div>
         </div>
           <div className={style.rightSide}>

@@ -4,32 +4,43 @@ const api = axios.create({
     baseURL: "https://pokeapi.co/api/v2/",
 });
 
-interface PokemonSprite {
+interface Pokemons {
     name: string
     id: number
     sprite: string
 }
 
-export const getPokemonSprites = async (): Promise<PokemonSprite[]> => {
-    try{
-        const response = await api.get("pokemon?limit=151")
-        const pokemons = response.data.results
+export const getRandomPokemons = async (): Promise<{
+    player: Pokemons[];
+    enemy: Pokemons[];
+}> => {
+    try {
+        const randomIds: number[] = [];
+        while (randomIds.length < 12) {
+            const randomId = Math.floor(Math.random() * 151) + 1
+            if(!randomIds.includes(randomId)){
+                randomIds.push(randomId)
+            }
+        }
 
-        const sprites = await Promise.all(
-            pokemons.map(async(pokemon: {name: string; url: string}) => {
-                const res = await axios.get(pokemon.url)
-                return{
-                    id: res.data.id,
-                    name: res.data.name,
-                    sprite: res.data.sprites.front_default || '',
-                }
-            })
-        )
+        const randomPokemons = await Promise.all(randomIds.map(async (id) => {
+            const res = await api.get(`pokemon/${id}`)
+            return {
+                id: res.data.id,
+                name: res.data.name,
+                sprite: res.data.sprites.front_default || '',
+            }
+        })
+    )
 
-        return sprites;
-    } catch (error){
-        console.log("Erro ao buscar sprites: ", error)
-        return []
+    const player = randomPokemons.slice(0, 6);
+    const enemy = randomPokemons.slice(6,12)
+
+    return {player, enemy}
+
+    } catch (error) {
+        console.log("Algo deu errado: ", error)
+        return {player: [], enemy: []}
     }
 }
 
